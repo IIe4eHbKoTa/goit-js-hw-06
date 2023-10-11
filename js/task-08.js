@@ -2,6 +2,8 @@ const loginForm = document.querySelector(".login-form");
 
 loginForm.addEventListener("submit", handleSubmit); 
 
+const formSubmit = {};
+
 function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -12,6 +14,9 @@ function handleSubmit(event) {
         return alert("Please fiil the fields")
     }
 
-    console.log(`Email: ${email}, Password: ${password}`);
+    formSubmit.email = email;
+    formSubmit.password = password;
+    
+    console.log(formSubmit);
 form.reset();
 }
